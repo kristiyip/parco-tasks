@@ -3,6 +3,7 @@ import '../App.css';
 import { useContext, useState } from "react";
 import { RetirementGapContext, RetirementGapContextType } from "./RetirementGapContext";
 import RetirementGapModal from "./RetirementGapModal/RetirementGapModal";
+import MonthlyGap from "./MonthlyGap";
 
 export default function RetirementGap() {
   const {
@@ -15,12 +16,7 @@ export default function RetirementGap() {
     <div className="cardContainer">
       <Card>
         <div className="cardHeader">
-          <div>My Retirement Gap:</div>
-          <div className="amountHeader">
-            <div className="dollarSign">$</div>
-            <div className="amountNumber">{monthlyIncomeGap}</div>
-            <div className="month">/month</div>
-          </div>
+          <MonthlyGap monthlyIncomeGap={monthlyIncomeGap} />
         </div>
         <CardContent>
           <div>Bridge Your Income Gap in Retirement!</div>

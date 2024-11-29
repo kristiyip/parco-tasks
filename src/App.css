@@ -22,6 +22,13 @@
   font-weight: 500;
 }
 
+.gapText {
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 2.5rem;
+}
+
 .amountHeader {
   display: flex;
 }
@@ -44,9 +51,9 @@
   font-size: 0.875rem;
   font-style: normal;
   font-weight: 600;
-  /* line-height: normal; */
   letter-spacing: 0.0175rem;
   text-align: right;
+  align-self: end;
 }
 
 .optionsContainer {
@@ -70,4 +77,26 @@
   font-weight: 400;
   line-height: 150%; /* 1.5rem */
   margin-bottom: 1rem;
+}
+
+.modalNavigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2.5rem;
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+}
+
+.arrowForward {
+  display: flex;
+  color: #495057;
+  width: 3.14519rem;
+  height: 3.14519rem;
+  padding: 0.24194rem 0.48388rem;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
 }

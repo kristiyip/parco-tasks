@@ -62,7 +62,7 @@
   margin-top: 1rem;
 }
 
-.exploreOptionsHeaderText {
+.modalHeaderText {
   font-size: 1.5rem;
   font-style: normal;
   font-weight: 600;
@@ -71,7 +71,7 @@
   margin: 1rem 0rem;
 }
 
-.exploreOptionsSecondaryText {
+.modalSecondaryText {
   font-size: 1rem;
   font-style: normal;
   font-weight: 400;

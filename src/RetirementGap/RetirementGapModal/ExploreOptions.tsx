@@ -5,7 +5,10 @@ import { RetirementGapContext, RetirementGapContextType } from "../RetirementGap
 import MonthlyGap from "../MonthlyGap";
 
 export default function ExploreOptions() {
-  const { monthlyIncomeGap } = useContext(RetirementGapContext) as RetirementGapContextType
+  const { 
+    monthlyIncomeGap,
+    setCurrModalCard
+  } = useContext(RetirementGapContext) as RetirementGapContextType
   return (
     <Card
       sx={{
@@ -13,10 +16,10 @@ export default function ExploreOptions() {
       }}
     >
       <Box>
-        <div className="exploreOptionsHeaderText">
+        <div className="modalHeaderText">
           Let's explore some options for bridging you Retirement Gap! 
         </div>
-        <div className="exploreOptionsSecondaryText">
+        <div className="modalSecondaryText">
           We'll start off with a few questions to get a sense of the direction you'd like to pursue. 
         </div>
         <Box
@@ -72,6 +75,7 @@ export default function ExploreOptions() {
             fontSize: '1.125rem',
             fontWeight: '600',
           }}
+          onClick={() => setCurrModalCard(2)}
         >
           Next
         </Button>

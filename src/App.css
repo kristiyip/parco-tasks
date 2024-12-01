@@ -122,3 +122,39 @@
   border: 1.5px solid #A3A7AA;
   background-color: #F1F1F1;
 }
+
+.optionContainer {
+  display: flex;
+  border: 1.5px solid #F1F1F1;
+  justify-content: space-between;
+  padding: 1.25rem;
+  border-radius: 6px;
+}
+
+.optionInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.optionHeader {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 150%; /* 1.6875rem */
+}
+
+.optionDetails {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 150%; /* 1.5rem */
+}
+
+.optionArrowIcon {
+  align-self: center;
+}
+
+.optionBottomText {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 150%; /* 1.3125rem */
+}

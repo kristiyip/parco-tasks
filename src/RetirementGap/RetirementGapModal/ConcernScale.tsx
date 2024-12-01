@@ -5,8 +5,7 @@ import ModalNavigation from "./ModalNavigation";
 
 export default function ConcernScale() {
   const { 
-    currModalCard,
-    setCurrModalCard
+    currModalCard
   } = useContext(RetirementGapContext) as RetirementGapContextType
 
   const [selectedConcern, setSelectedConcern] = useState<number | null>(null)

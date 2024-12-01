@@ -36,8 +36,13 @@ export default function SolutionOptions() {
       </div>
       <div className="optionContainer">
         <div className="optionInfo">
-          <div className="optionHeader">
-            Re-Allocate $110k-$140k with PARCO
+          <div style={{ display: 'flex' }}>
+            <div className="optionHeader">
+              Re-Allocate $110k-$140k with PARCO
+            </div>
+            <div className="recommendedBadge">
+              RECOMMENDED
+            </div>
           </div>
           <div className="optionDetails">
             Close your income gap and receive $564 a month in retirement for the rest of your life.

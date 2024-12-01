@@ -3,6 +3,7 @@ import { useContext, useMemo } from "react";
 import { RetirementGapContext, RetirementGapContextType } from "../RetirementGapContext";
 import ExploreOptions from "./ExploreOptions";
 import ConcernScale from "./ConcernScale";
+import SolutionOptions from "./SolutionOptions";
 
 type RetirementModalType = {
   isModalOpen: boolean,
@@ -27,6 +28,8 @@ export default function RetirementGapModal({
         return <ConcernScale />
       case 3: 
         return <ConcernScale />
+      case 4: 
+        return <SolutionOptions />
       default:
         return <ExploreOptions />
     }
@@ -40,10 +43,9 @@ export default function RetirementGapModal({
         setCurrModalCard(1)
       }}
       sx={{
-        display: 'flex',
-        justifyContent: 'center',
+        display: 'block',
         alignContent: 'center',
-        padding: '20rem 0rem'
+        padding: '0rem 20rem'
       }}
     >
       {viewCard}

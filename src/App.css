@@ -82,7 +82,7 @@
 .modalNavigation {
   display: flex;
   justify-content: space-between;
-  margin-top: 2.5rem;
+  margin-top: 40px;
 }
 
 .backButton {
@@ -99,4 +99,26 @@
   flex-direction: column;
   justify-content: center;
   align-self: center;
+}
+
+.concernedButtonGroup {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-grow: 1;
+}
+
+.concernedButtonGroup button {
+  border: 1.5px solid #F1F1F1;
+  padding: 10px 14px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  flex-grow: 1;
+  height: 3.8rem;
+}
+
+.concernedButtonGroup button:hover {
+  border: 1.5px solid #A3A7AA;
+  background-color: #F1F1F1;
 }

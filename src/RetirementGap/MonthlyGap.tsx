@@ -12,7 +12,7 @@ export default function MonthlyGap({
     <div className="amountHeader">
       <div className="dollarSign">$</div>
       <div className="amountNumber">{monthlyIncomeGap}</div>
-      <div className="month">/month</div>
+    <div className="month">/month</div>
     </div>
   </>
   )

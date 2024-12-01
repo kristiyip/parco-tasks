@@ -1,52 +1,62 @@
 import { Button, Card } from "@mui/material";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { RetirementGapContext, RetirementGapContextType } from "../RetirementGapContext";
-import { ArrowBack } from "@mui/icons-material"
+import ModalNavigation from "./ModalNavigation";
 
 export default function ConcernScale() {
   const { 
     currModalCard,
     setCurrModalCard
   } = useContext(RetirementGapContext) as RetirementGapContextType
+
+  const [selectedConcern, setSelectedConcern] = useState<number | null>(null)
   const isInflationCard = currModalCard == 3
+
   return (
-    <Card>
-      <div>
-        <div className="modalHeaderText">
-          {`How concerned are you about ${isInflationCard ? 'inflation' : 'being in a nursing home'}?`}
-        </div>
-        <div className="modalSecondaryText">
-          Please answer as honestly as possible for the best results.
-        </div>
+    <Card 
+      sx={{ 
+        display: 'flex', 
+        flexDirection: 'column', 
+        gap:'24px', 
+        padding: '60px 80px' 
+      }}
+    >
+      <div className="modalHeaderText">
+        {`How concerned are you about ${isInflationCard ? 'inflation' : 'being in a nursing home'}?`}
       </div>
-      <div className="modalNavigation">
-        <div className="backButton">
-          <Button
-            sx={{
-              color: '#344767',
-              fontSize: '1.125rem',
-              fontWeight: '600'
-            }}
-          >
-            <ArrowBack />
-            Back
-          </Button>
-        </div>
-        <Button
+      <div className="modalSecondaryText">
+        Please answer as honestly as possible for the best results.
+      </div>
+      <div className="concernedButtonGroup">
+        <Button 
+          onClick={() => setSelectedConcern(0)}
           sx={{
-            background: "#344767",
-            color: 'white',
-            width: '6.79rem',
-            height: '3.3rem',
-            gap: '0.625rem',
-            fontSize: '1.125rem',
-            fontWeight: '600',
+            backgroundColor: selectedConcern === 0 ? '#0671AD' : '#F1F1F1',
+            color: selectedConcern === 0 ? 'white' : '#262627',
           }}
-          onClick={() => setCurrModalCard(3)}
         >
-          Next
+          Not Concerned
+        </Button>
+        <Button 
+          onClick={() => setSelectedConcern(1)}
+          sx={{
+            backgroundColor: selectedConcern === 1 ? '#0671AD' : '#F1F1F1',
+            color: selectedConcern === 1 ? 'white' : '#262627',
+          }}
+        >
+          Hadn't Thought About It
+        </Button>
+        <Button 
+          onClick={() => setSelectedConcern(2)}
+          sx={{
+            backgroundColor: selectedConcern === 2 ? '#0671AD' : '#F1F1F1',
+            color: selectedConcern === 2 ? 'white' : '#262627',
+          }}
+        >
+          Concerned
         </Button>
       </div>
+      <ModalNavigation />
     </Card>
   )
 }

@@ -3,6 +3,7 @@ import { ArrowForward, ArrowBack } from "@mui/icons-material"
 import { useContext } from "react";
 import { RetirementGapContext, RetirementGapContextType } from "../RetirementGapContext";
 import MonthlyGap from "../MonthlyGap";
+import ModalNavigation from "./ModalNavigation";
 
 export default function ExploreOptions() {
   const { 
@@ -10,9 +11,12 @@ export default function ExploreOptions() {
     setCurrModalCard
   } = useContext(RetirementGapContext) as RetirementGapContextType
   return (
-    <Card
-      sx={{
-        padding: '3.75rem 5rem'
+    <Card 
+      sx={{ 
+        display: 'flex', 
+        flexDirection: 'column', 
+        gap:'24px', 
+        padding: '60px 80px' 
       }}
     >
       <Box>
@@ -24,16 +28,19 @@ export default function ExploreOptions() {
         </div>
         <Box
           sx={{
-            display: 'flex'
+            display: 'flex',
+            justifyContent: 'space-between'
           }} 
         >
           <Box
             sx={{
               display: 'flex',
+              justifyContent: 'space-between',
               background: '#FD5C70',
-              padding: '1rem 1.5rem',
+              padding: '16px 24px',
               color: 'white',
-              borderRadius: '0.5rem'
+              borderRadius: '0.5rem',
+              width: '377px'
             }}
           >
             <MonthlyGap monthlyIncomeGap={monthlyIncomeGap} />
@@ -42,44 +49,19 @@ export default function ExploreOptions() {
           <Box
             sx={{
               display: 'flex',
+              justifyContent: 'space-between',
               background: '#60BE64',
-              padding: '1rem 1.5rem',
+              padding: '16px 24px',
               color: 'white',
-              borderRadius: '0.5rem'
+              borderRadius: '0.5rem',
+              width: '377px'
             }}
           >
             <MonthlyGap monthlyIncomeGap={0} />
           </Box>
         </Box>
       </Box>
-      <div className="modalNavigation">
-        <div className="backButton">
-          <Button
-            sx={{
-              color: '#344767',
-              fontSize: '1.125rem',
-              fontWeight: '600'
-            }}
-          >
-            <ArrowBack />
-            Back
-          </Button>
-        </div>
-        <Button
-          sx={{
-            background: "#344767",
-            color: 'white',
-            width: '6.79rem',
-            height: '3.3rem',
-            gap: '0.625rem',
-            fontSize: '1.125rem',
-            fontWeight: '600',
-          }}
-          onClick={() => setCurrModalCard(2)}
-        >
-          Next
-        </Button>
-      </div>
+      <ModalNavigation />
     </Card>
   )
 }

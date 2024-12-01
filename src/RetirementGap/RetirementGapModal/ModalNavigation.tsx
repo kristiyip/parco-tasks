@@ -4,7 +4,10 @@ import { useContext } from "react";
 import { RetirementGapContext, RetirementGapContextType } from "../RetirementGapContext";
 
 export default function ModalNavigation() {
-  const { setCurrModalCard } = useContext(RetirementGapContext) as RetirementGapContextType
+  const { 
+    currModalCard,
+    setCurrModalCard 
+  } = useContext(RetirementGapContext) as RetirementGapContextType
   
   return (
     <div className="modalNavigation">
@@ -21,20 +24,22 @@ export default function ModalNavigation() {
           Back
         </Button>
       </div>
-      <Button
-        sx={{
-          background: "#344767",
-          color: 'white',
-          width: '6.79rem',
-          height: '3.3rem',
-          gap: '0.625rem',
-          fontSize: '1.125rem',
-          fontWeight: '600',
-        }}
-        onClick={() => setCurrModalCard((prev: number) => prev + 1)}
-      >
-        Next
-      </Button>
+      {currModalCard !== 4 && currModalCard !== 5 && (
+        <Button
+          sx={{
+            background: "#344767",
+            color: 'white',
+            width: '6.79rem',
+            height: '3.3rem',
+            gap: '0.625rem',
+            fontSize: '1.125rem',
+            fontWeight: '600',
+          }}
+          onClick={() => setCurrModalCard((prev: number) => prev + 1)}
+        >
+          Next
+        </Button>
+      )}
     </div>
   )
 }

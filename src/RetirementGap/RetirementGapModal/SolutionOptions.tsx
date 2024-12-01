@@ -5,6 +5,7 @@ import ModalNavigation from "./ModalNavigation"
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 export default function SolutionOptions() {
+  const { setCurrModalCard } = useContext(RetirementGapContext) as RetirementGapContextType
   return (
     <Card 
       sx={{ 
@@ -34,7 +35,10 @@ export default function SolutionOptions() {
         </div>
         <ArrowForwardIosIcon className="optionArrowIcon"/>
       </div>
-      <div className="optionContainer">
+      <div 
+        className="optionContainer"
+        onClick={() => setCurrModalCard((prev: number) => prev + 1)}
+      >
         <div className="optionInfo">
           <div style={{ display: 'flex' }}>
             <div className="optionHeader">

@@ -4,6 +4,7 @@ import { RetirementGapContext, RetirementGapContextType } from "../RetirementGap
 import ExploreOptions from "./ExploreOptions";
 import ConcernScale from "./ConcernScale";
 import SolutionOptions from "./SolutionOptions";
+import ReallocationOptions from "./ReallocationOptions";
 
 type RetirementModalType = {
   isModalOpen: boolean,
@@ -30,6 +31,8 @@ export default function RetirementGapModal({
         return <ConcernScale />
       case 4: 
         return <SolutionOptions />
+      case 5: 
+        return <ReallocationOptions />
       default:
         return <ExploreOptions />
     }

@@ -131,6 +131,12 @@
   border-radius: 6px;
 }
 
+.optionContainer:hover {
+  background-color: #F1F1F1;
+  border: 1px solid #A3A7AA;
+  cursor: pointer;
+}
+
 .optionInfo {
   display: flex;
   flex-direction: column;

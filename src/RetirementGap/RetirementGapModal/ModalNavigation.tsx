@@ -24,20 +24,48 @@ export default function ModalNavigation() {
           Back
         </Button>
       </div>
-      {currModalCard !== 4 && currModalCard !== 5 && (
+      {currModalCard !== 4 && currModalCard !== 5 && currModalCard !== 6 && currModalCard !== 7 && (
         <Button
           sx={{
             background: "#344767",
             color: 'white',
-            width: '6.79rem',
-            height: '3.3rem',
-            gap: '0.625rem',
+            padding: '.5rem 2rem',
             fontSize: '1.125rem',
             fontWeight: '600',
           }}
           onClick={() => setCurrModalCard((prev: number) => prev + 1)}
         >
           Next
+        </Button>
+      )}
+      {currModalCard === 6 && (
+        <Button
+          sx={{
+            background: "#344767",
+            color: 'white',
+            height: '3.3rem',
+            padding: '.5rem 2rem',
+            fontSize: '1.125rem',
+            fontWeight: '600',
+          }}
+          onClick={() => setCurrModalCard((prev: number) => prev + 1)}
+        >
+          SELECT A TIME
+        </Button>
+      )}
+      {currModalCard === 7 && (
+        <Button
+          sx={{
+            background: "#344767",
+            color: 'white',
+            height: '3.3rem',
+            padding: '.5rem 2rem',
+            gap: '0.625rem',
+            fontSize: '1.125rem',
+            fontWeight: '600',
+          }}
+        >
+          SCHEDULE A MEETING
         </Button>
       )}
     </div>

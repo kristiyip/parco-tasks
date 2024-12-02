@@ -1,4 +1,4 @@
-import { Button, Card } from "@mui/material";
+import { Button } from "@mui/material";
 import { useContext, useState } from "react";
 import { RetirementGapContext, RetirementGapContextType } from "../RetirementGapContext";
 import ModalNavigation from "./ModalNavigation";
@@ -12,14 +12,7 @@ export default function ConcernScale() {
   const isInflationCard = currModalCard == 3
 
   return (
-    <Card 
-      sx={{ 
-        display: 'flex', 
-        flexDirection: 'column', 
-        gap:'24px', 
-        padding: '60px 80px' 
-      }}
-    >
+    <>
       <div className="modalHeaderText">
         {`How concerned are you about ${isInflationCard ? 'inflation' : 'being in a nursing home'}?`}
       </div>
@@ -56,6 +49,6 @@ export default function ConcernScale() {
         </Button>
       </div>
       <ModalNavigation />
-    </Card>
+    </>
   )
 }

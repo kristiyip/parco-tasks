@@ -1,20 +1,12 @@
 import { useContext } from "react"
 import { RetirementGapContext, RetirementGapContextType } from "../RetirementGapContext"
-import { Card } from "@mui/material"
 import ModalNavigation from "./ModalNavigation"
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 export default function SolutionOptions() {
   const { setCurrModalCard } = useContext(RetirementGapContext) as RetirementGapContextType
   return (
-    <Card 
-      sx={{ 
-        display: 'flex', 
-        flexDirection: 'column', 
-        gap:'24px', 
-        padding: '60px 80px' 
-      }}
-    >
+    <>
       <div className="modalHeaderText">
         Choose how you'd prefer to bridge your income gap in retirement
       </div>
@@ -58,6 +50,6 @@ export default function SolutionOptions() {
         <ArrowForwardIosIcon className="optionArrowIcon"/>
       </div>
       <ModalNavigation />
-    </Card>
+    </>
   )
 }

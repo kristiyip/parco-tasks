@@ -2,6 +2,8 @@ import { useContext } from "react"
 import { RetirementGapContext, RetirementGapContextType } from "../RetirementGapContext"
 import ModalNavigation from "./ModalNavigation"
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import ThriftSavingsLogo from "../logos/ThriftSavingsLogo";
+import NorthAmericanAndParcoStackedLogo from "../logos/NorthAmericanAndParcoStackedLogo";
 
 export default function SolutionOptions() {
   const { setCurrModalCard } = useContext(RetirementGapContext) as RetirementGapContextType
@@ -22,7 +24,10 @@ export default function SolutionOptions() {
             Based on the assumption that you will be spending 3% of your TSP each year in retirement to close your income gap.
           </div>
           <div>
-            <div className="optionBottomText">Withdrawals estimated to last 30 years</div>
+            <div className="optionBottomText">
+              <ThriftSavingsLogo />
+              Withdrawals estimated to last 30 years
+            </div>
           </div>
         </div>
         <ArrowForwardIosIcon className="optionArrowIcon"/>
@@ -44,7 +49,10 @@ export default function SolutionOptions() {
             Close your income gap and receive $564 a month in retirement for the rest of your life.
           </div>
           <div>
-            <div className="optionBottomText">Lifetime income guaranteed</div>
+            <div className="optionBottomText">
+              <NorthAmericanAndParcoStackedLogo />
+              Lifetime income guaranteed
+            </div>
           </div>
         </div>
         <ArrowForwardIosIcon className="optionArrowIcon"/>

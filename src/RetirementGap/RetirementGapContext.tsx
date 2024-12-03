@@ -1,9 +1,13 @@
-import React, { createContext, useEffect, useState } from "react"
+import React, { createContext, useState } from "react"
 
 export interface RetirementGapContextType {
   monthlyIncomeGap: number,
   currModalCard: number,
-  setCurrModalCard: Function
+  setCurrModalCard: Function,
+  nursingHomeConcernRating: number | null,
+  setNursingHomeConcernRating: Function,
+  inflationConcernRating: number | null,
+  setInflationConcernRating: Function
 }
 
 export const RetirementGapContext = createContext<RetirementGapContextType | null>(null)
@@ -11,12 +15,17 @@ export const RetirementGapContext = createContext<RetirementGapContextType | nul
 const RetirementGapProvider = ({ children }: any) => {
   const monthlyIncomeGap = 564
   const [currModalCard, setCurrModalCard] = useState<number>(1)
-
+  const [nursingHomeConcernRating, setNursingHomeConcernRating] = useState<number | null>(null)
+  const [inflationConcernRating, setInflationConcernRating] = useState<number | null>(null)
   return (
     <RetirementGapContext.Provider value={{
       monthlyIncomeGap,
       currModalCard,
-      setCurrModalCard
+      setCurrModalCard,
+      nursingHomeConcernRating,
+      setNursingHomeConcernRating,
+      inflationConcernRating,
+      setInflationConcernRating
     }}>
       {children}
     </RetirementGapContext.Provider>

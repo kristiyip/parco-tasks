@@ -16,11 +16,33 @@ export default function RetirementGap() {
     <div className="cardContainer">
       <Card>
         <div className="cardHeader">
-          <MonthlyGap monthlyIncomeGap={monthlyIncomeGap} />
+          <div style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+          }}>
+            <MonthlyGap monthlyIncomeGap={monthlyIncomeGap} />
+          </div>
         </div>
-        <CardContent>
-          <div>Bridge Your Income Gap in Retirement!</div>
-          <div>{`To bridge your $${monthlyIncomeGap}/month income gap in retirement, we estimate you’d need to use:`}</div>
+        <CardContent
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '16px',
+            padding: '24px'
+          }}
+        >
+          <div className="cardPrimaryText">
+            Bridge Your Income Gap in Retirement!
+          </div>
+          <div className="cardSecondaryText">
+            {`To bridge your $${monthlyIncomeGap}/month income gap in retirement, we estimate you’d need to use:`}
+          </div>
+          <div className="moneyToUse">
+            $110k - $300k
+          </div>
+          <div className="cardSecondaryText">
+            To bridge your <b>$564/month</b> income gap in retirement.
+          </div>
           <div className="optionsContainer">
             <Button 
               sx={{ 

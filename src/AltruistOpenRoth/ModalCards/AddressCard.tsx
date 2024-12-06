@@ -1,6 +1,7 @@
 import { Button, Card, TextField } from "@mui/material";
 import { useContext } from "react";
 import { AltruistOpenRothContext, AltruistOpenRothType } from "../AltruistOpenRothContext";
+import '../AltruistOpenRoth.css'
 
 export default function AddressCard() {
   const { setCurrModalCard } = useContext(AltruistOpenRothContext) as AltruistOpenRothType

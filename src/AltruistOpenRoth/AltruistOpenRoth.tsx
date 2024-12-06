@@ -3,6 +3,7 @@ import { useContext, useMemo, useState } from "react";
 import StartCard from "./ModalCards/StartCard";
 import AddressCard from "./ModalCards/AddressCard";
 import { AltruistOpenRothContext, AltruistOpenRothType } from "./AltruistOpenRothContext";
+import SSNCard from "./ModalCards/SSNCard";
 
 export default function AltruistOpenRoth({
   openAltruistModal
@@ -18,11 +19,13 @@ export default function AltruistOpenRoth({
         return <StartCard />
       case 1:
         return <AddressCard />
+      case 2:
+        return <SSNCard />
       default:
         return <StartCard />
     }
   }, [currModalCard])
-  
+
   return (
     <Modal
       open={openAltruistModal}

@@ -1,0 +1,28 @@
+.primaryText {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 37.34px;
+}
+
+.detailText {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.iconWithText {
+  padding: 0rem 3rem;
+  display: flex;
+  justify-content: center;
+  text-align: left;
+  gap: 16px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+}
+
+.icon {
+  width: 22px;
+  height: 22px;
+  color: #5D729E;
+}

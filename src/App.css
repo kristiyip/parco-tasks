@@ -1,6 +1,7 @@
 .App {
   width: 100vw;
   height: 100vh;
+  display: flex;
 }
 
 .cardContainer {
@@ -236,4 +237,12 @@
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 150%; /* 1.3125rem */
+}
+
+.cancelButton {
+  color: red;
+}
+
+.cancelButton:hover {
+  color: blue;
 }

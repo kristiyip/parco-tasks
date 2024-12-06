@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import RetirementGapProvider from './RetirementGap/RetirementGapContext';
+import AltruistOpenRothProvider from './AltruistOpenRoth/AltruistOpenRothContext';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -11,7 +12,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <RetirementGapProvider>
-      <App />
+      <AltruistOpenRothProvider>
+        <App />
+      </AltruistOpenRothProvider>
     </RetirementGapProvider>
   </React.StrictMode>
 );

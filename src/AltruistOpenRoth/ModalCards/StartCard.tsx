@@ -3,8 +3,12 @@ import ParcoPlusAltruist from "../logos/ParcoPlusAltruist";
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import SettingsIcon from '@mui/icons-material/Settings';
 import '../AltruistOpenRoth.css'
+import { useContext } from "react";
+import { AltruistOpenRothContext, AltruistOpenRothType } from "../AltruistOpenRothContext";
 
 export default function StartCard() {
+  const { setCurrModalCard } = useContext(AltruistOpenRothContext) as AltruistOpenRothType
+
   return (
     <Card
       sx={{
@@ -12,10 +16,9 @@ export default function StartCard() {
         display: 'flex',
         flexDirection: 'column',
         gap: '24px',
-        maxWidth: '700px',
+        maxWidth: '400px',
         justifyContent: 'center',
         textAlign: 'center',
-        width: '400px'
       }}
     >
       <div>
@@ -50,6 +53,7 @@ export default function StartCard() {
           marginTop: '40px',
           padding: '16px 40px'
         }}
+        onClick={() => setCurrModalCard((prev: number) => prev + 1)}
       >
         START
       </Button>

@@ -1,23 +1,28 @@
 import { Modal } from "@mui/material";
-import { useMemo, useState } from "react";
+import { useContext, useMemo, useState } from "react";
 import StartCard from "./ModalCards/StartCard";
+import AddressCard from "./ModalCards/AddressCard";
+import { AltruistOpenRothContext, AltruistOpenRothType } from "./AltruistOpenRothContext";
 
-type AltruistOpenRothType = {
-  openAltruistModal: boolean
-}
 export default function AltruistOpenRoth({
   openAltruistModal
-}: AltruistOpenRothType) {
-  const [currPage, setCurrPage] = useState(0)
+}: any) {
+  const { 
+    currModalCard, 
+    setCurrModalCard
+  } = useContext(AltruistOpenRothContext) as AltruistOpenRothType
 
   const viewCard = useMemo(() => {
-    switch(currPage) {
+    switch(currModalCard) {
       case 0: 
         return <StartCard />
+      case 1:
+        return <AddressCard />
       default:
         return <StartCard />
     }
-  }, [currPage])
+  }, [currModalCard])
+  
   return (
     <Modal
       open={openAltruistModal}

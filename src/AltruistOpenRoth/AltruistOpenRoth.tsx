@@ -4,13 +4,13 @@ import StartCard from "./ModalCards/StartCard";
 import AddressCard from "./ModalCards/AddressCard";
 import { AltruistOpenRothContext, AltruistOpenRothType } from "./AltruistOpenRothContext";
 import SSNCard from "./ModalCards/SSNCard";
+import CompletionCard from "./ModalCards/CompletionCard";
 
-export default function AltruistOpenRoth({
-  openAltruistModal
-}: any) {
+export default function AltruistOpenRoth() {
   const { 
     currModalCard, 
-    setCurrModalCard
+    modalOpen,
+    setModalOpen
   } = useContext(AltruistOpenRothContext) as AltruistOpenRothType
 
   const viewCard = useMemo(() => {
@@ -21,6 +21,8 @@ export default function AltruistOpenRoth({
         return <AddressCard />
       case 2:
         return <SSNCard />
+      case 3:
+        return <CompletionCard />
       default:
         return <StartCard />
     }
@@ -28,7 +30,8 @@ export default function AltruistOpenRoth({
 
   return (
     <Modal
-      open={openAltruistModal}
+      open={modalOpen}
+      onClose={() => setModalOpen(false)}
       sx={{
         alignContent: 'center',
         justifyContent: 'center'

@@ -1,12 +1,21 @@
 import { useContext } from "react";
-import { Button, Card, TextField } from "@mui/material";
 import { AltruistOpenRothContext, AltruistOpenRothType } from "../AltruistOpenRothContext";
+import { Button, Card, TextField } from "@mui/material";
 import { ArrowBack } from "@mui/icons-material";
+import CancelIcon from '@mui/icons-material/Cancel';
 import '../AltruistOpenRoth.css';
 
 export default function SSNCard() {
-  const { setCurrModalCard } = useContext(AltruistOpenRothContext) as AltruistOpenRothType
+  const { 
+    setCurrModalCard,
+    setModalOpen
+  } = useContext(AltruistOpenRothContext) as AltruistOpenRothType
 
+  const handleClose = () => {
+    setModalOpen(false)
+    setCurrModalCard(0)
+  }
+  
   return (
     <Card
       sx={{
@@ -16,8 +25,18 @@ export default function SSNCard() {
         maxWidth: '700px',
         justifyContent: 'center',
         textAlign: 'center',
+        position: 'relative'
       }}
     >
+      <div 
+        className="cancelIconContainer"
+        onClick={() => handleClose()}
+      >
+        <CancelIcon 
+          className="cancelIcon" 
+          fontSize="large"
+        />
+      </div>
       <div className="banner"/>
       <div className="cardContentContainer">
         <div>

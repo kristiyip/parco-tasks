@@ -69,3 +69,21 @@
   display: flex;
   justify-content: end;
 }
+
+.cancelIconContainer {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+.cancelIcon {
+  color: #F1F1F1;
+}
+
+.cancelIcon:hover {
+  color: #A3A7AA;
+}
+
+.cancelIcon:active {
+  color: #75787B;
+}

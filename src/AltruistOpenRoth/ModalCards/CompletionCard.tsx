@@ -1,7 +1,8 @@
-import { Button, Card } from "@mui/material";
-import { AltruistOpenRothContext, AltruistOpenRothType } from "../AltruistOpenRothContext";
-import '../AltruistOpenRoth.css';
 import { useContext } from "react";
+import { AltruistOpenRothContext, AltruistOpenRothType } from "../AltruistOpenRothContext";
+import { Button, Card } from "@mui/material";
+import CancelIcon from '@mui/icons-material/Cancel';
+import '../AltruistOpenRoth.css';
 
 export default function CompletionCard() {
   const { 
@@ -13,6 +14,7 @@ export default function CompletionCard() {
     setModalOpen(false)
     setCurrModalCard(0)
   }
+
   return (
     <Card
       sx={{
@@ -22,8 +24,18 @@ export default function CompletionCard() {
         maxWidth: '700px',
         justifyContent: 'center',
         textAlign: 'center',
+        position: 'relative'
       }}
     >
+      <div 
+        className="cancelIconContainer"
+        onClick={() => handleClose()}
+      >
+        <CancelIcon 
+          className="cancelIcon" 
+          fontSize="large"
+        />
+      </div>
       <div className="banner"/>
       <div className="cardContentContainer">
         <div>

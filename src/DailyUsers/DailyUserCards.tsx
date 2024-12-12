@@ -1,6 +1,7 @@
 import { Card } from "@mui/material";
 import { Switch } from "@mui/joy";
 import './DailyUsers.css'
+import DailyUsersChart from "./DailyUsersChart";
 
 export default function DailyUserCard() {
   return (
@@ -43,6 +44,7 @@ export default function DailyUserCard() {
           />
         </div>
       </div>
+      <DailyUsersChart />
     </Card>
   )
 }

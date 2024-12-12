@@ -1,5 +1,5 @@
 import { Modal } from "@mui/material";
-import DailyUserCard from "./DailyUserCard";
+import DailyUserCard from "./DailyUserCards";
 
 type DailyUserType = {
   openDailyUsersModal: boolean,

@@ -25,6 +25,5 @@ export const getStackedBarChartLabels = () => {
       return day
     }
   })
-  console.log(labels)
   return labels
 }

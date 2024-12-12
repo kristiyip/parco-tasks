@@ -9,6 +9,7 @@ import {
   Legend
 } from 'chart.js'
 import { Users } from './mockData';
+import { getStackedBarChartLabels } from './helper';
 
 ChartJS.register(
   BarElement,
@@ -19,8 +20,10 @@ ChartJS.register(
 );
 
 export default function DailyUsersChart() {
+  const labels = getStackedBarChartLabels()
+
   const [chartData, setChartData] = useState({
-    labels: ['A month ago', '', 'Today'],
+    labels: labels,
     datasets: [
       {
         label: 'label1',
@@ -52,7 +55,7 @@ export default function DailyUsersChart() {
           callback: function(val: any, index: any) {
             if(index === 0) {
               return 'A month ago'
-            } else if(index === (Users.length - 1)) {
+            } else if(index === (labels.length - 1)) {
               return 'Today'
             } else {
               return ''

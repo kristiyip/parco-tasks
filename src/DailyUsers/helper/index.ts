@@ -15,7 +15,7 @@ export const getOneMonthAgoWithoutYear = () => {
 }
 
 export const getStackedBarChartLabels = () => {
-  const daysInAMonth = 4
+  const daysInAMonth = 8
   let labels = Array(daysInAMonth).fill('').map((day, i) => {
     if(i == 0) {
       return getOneMonthAgoWithoutYear()

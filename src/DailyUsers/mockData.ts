@@ -2,7 +2,10 @@ export const Users = [
   {
     id: 1,
     first_name: "Bastian",
-    last_name: "Gillimgham"
+    last_name: "Gillimgham",
+    dates: [
+      ''
+    ]
   }, {
     id: 2,
     first_name: "Iona",

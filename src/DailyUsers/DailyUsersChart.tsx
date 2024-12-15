@@ -31,20 +31,26 @@ export default function DailyUsersChart() {
       {
         label: 'label1',
         data: [12, 2, 3, 4, 12, 2, 3, 4],
-        backgroundColor: 'red',
+        backgroundColor: '#FD5C70',
         barThickness: 6,
         minBarLength: 2,
       },
       {
         label: 'label2',
         data: [3, 4, 5, 6, 3, 4, 5, 6],
-        backgroundColor: 'blue',
+        backgroundColor: '#60BE644D',
         barThickness: 6,
       },
       {
         label: 'label3',
         data: [7, 4, 5, 6, 3, 4, 5, 6],
-        backgroundColor: 'green',
+        backgroundColor: '#60BE6499',
+        barThickness: 6,
+      },
+      {
+        label: 'label4',
+        data: [7, 4, 5, 6, 3, 4, 5, 6],
+        backgroundColor: '#60BE64',
         barThickness: 6,
       },
     ]
@@ -101,15 +107,25 @@ export default function DailyUsersChart() {
       
             // Add body
             bodyLines.forEach((body: any, i: any) => {
-              const datasetLabel = context.tooltip.dataPoints[i].dataset.label;
-              const color = context.tooltip.dataPoints[i].dataset.backgroundColor;
               const parsedStackData = context.tooltip.dataPoints[i].parsed._stacks.y
               innerHtml += `
-                <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 5px;">
-                  <div style="width: 12px; height: 12px; background-color: ${color}; margin-right: 5px;"></div>
-                  <div>${parsedStackData[0]}</div>
-                  <div>${parsedStackData[1]}</div>
-                  <div>${parsedStackData[2]}</div>
+                <div style="display: block; align-items: center; margin-bottom: 5px;">
+                  <div style="display: flex">
+                    <div style="width: 12px; height: 12px; background-color: #60BE64; margin-right: 5px;"/>
+                    <div>${parsedStackData[3]}</div>
+                  </div>
+                  <div style="display: flex">
+                    <div style="width: 12px; height: 12px; background-color: #60BE6499; margin-right: 5px;"/>
+                    <div>${parsedStackData[2]}</div>
+                  </div>
+                  <div style="display: flex">
+                    <div style="width: 12px; height: 12px; background-color: #60BE644D; margin-right: 5px;"/>
+                    <div>${parsedStackData[1]}</div>
+                  </div>
+                  <div style="display: flex; gap: 5px;">
+                    <div style="width: 12px; height: 12px; background-color: #FD5C70;"/>
+                    <div>${parsedStackData[0]}</div>
+                  </div>
                 </div>
               `;
             });

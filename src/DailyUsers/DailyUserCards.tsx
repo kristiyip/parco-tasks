@@ -23,22 +23,24 @@ export default function DailyUserCard() {
               thumb: {
                 children: (
                   <>
-                    <span>Total</span>
+                    <span style={{fontSize: '16px', textAlign: 'center'}}>
+                      Total
+                    </span>
                   </> 
                 )
               },
               track: {
                 children: (
                   <> 
-                    <span>Types</span>
+                    <span style={{ marginLeft: '10px'}}>Total</span>
+                    <span style={{ marginRight: '10px'}}>Types</span>
                   </>
                 )
               }
             }}
             sx={{
-              '--Switch-thumbWidth': '90px',
-              // '--Switch-thumbHeight': '31px',
-              '--Switch-trackWidth': '100px',
+              '--Switch-thumbWidth': '85px',
+              '--Switch-trackWidth': '180px',
               '--Switch-trackHeight': '31px',
             }}
           />

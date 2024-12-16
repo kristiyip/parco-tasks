@@ -71,6 +71,7 @@ export default function DailyUsersChart() {
       tooltipEl.style.pointerEvents = 'none';
       tooltipEl.style.transition = 'all 0.1s ease';
       tooltipEl.style.padding = '5px';
+      tooltipEl.style.zIndex = '100'
       chart.canvas.parentNode.appendChild(tooltipEl);
     }
 
@@ -98,33 +99,49 @@ export default function DailyUsersChart() {
             const titleLines = context.tooltip.title || [];
             const bodyLines = context.tooltip.body.map((b: any) => b.lines);
         
-            let innerHtml = `<div style="padding: 10px;">`;
+            let innerHtml = `<div style="padding: 20px; width: 200px">`;
 
-            // Add title
-            titleLines.forEach((title: any) => {
-              innerHtml += `<div style="font-weight: bold; margin-bottom: 5px;">${title}</div>`;
-            });
+            // // Add title
+            // titleLines.forEach((title: any) => {
+            //   innerHtml += `<div style="font-weight: bold; margin-bottom: 5px;">${title}</div>`;
+            // });
       
             // Add body
             bodyLines.forEach((body: any, i: any) => {
               const parsedStackData = context.tooltip.dataPoints[i].parsed._stacks.y
               innerHtml += `
-                <div style="display: block; align-items: center; margin-bottom: 5px;">
-                  <div style="display: flex">
-                    <div style="width: 12px; height: 12px; background-color: #60BE64; margin-right: 5px;"/>
+                <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 5px;">
+                  <div style="display: flex; width: 100%; justify-content: space-between;">
+                    <div style="display: flex;">
+                      <div style="width: 12px; height: 12px; background-color: #60BE64; margin-right: 5px; margin-top: 4px"<div></div>
+                      <div>URGENT Actionable</div>
+                    </div>
                     <div>${parsedStackData[3]}</div>
                   </div>
-                  <div style="display: flex">
-                    <div style="width: 12px; height: 12px; background-color: #60BE6499; margin-right: 5px;"/>
+                  <div style="display: flex; width: 100%; justify-content: space-between;">
+                    <div style="display: flex;">
+                      <div style="width: 12px; height: 12px; background-color: #60BE6499; margin-right: 5px; margin-top: 4px"></div>
+                      <div>Likely Actionable</div>
+                    </div>
                     <div>${parsedStackData[2]}</div>
                   </div>
-                  <div style="display: flex">
-                    <div style="width: 12px; height: 12px; background-color: #60BE644D; margin-right: 5px;"/>
-                    <div>${parsedStackData[1]}</div>
+                  <div style="display: flex; width: 100%; justify-content: space-between;">
+                    <div style="display: flex;">
+                      <div style="width: 12px; height: 12px; background-color: #60BE644D; margin-right: 5px; margin-top: 4px"></div>
+                      <div>Unlikely Actionable</div>
+                    </div>
+                    <div>${parsedStackData[1]}</div> 
                   </div>
-                  <div style="display: flex; gap: 5px;">
-                    <div style="width: 12px; height: 12px; background-color: #FD5C70;"/>
+                  <div style="display: flex; width: 100%; justify-content: space-between;">
+                    <div style="display: flex;">
+                      <div style="width: 12px; height: 12px; background-color: #FD5C70; margin-right: 5px; margin-top: 4px"></div>
+                      <div>Not Actionable</div>
+                    </div>
                     <div>${parsedStackData[0]}</div>
+                  </div>
+                  <div style="display: flex; width: 100%; justify-content: space-between;">
+                    <div>Total</div>
+                    <div>${parsedStackData[0] + parsedStackData[1] + parsedStackData[2] + parsedStackData[3]}</div>
                   </div>
                 </div>
               `;

@@ -1,15 +1,20 @@
 import moment from "moment"
 
-export const chartDataTransformer = (data: any) => {
-  return {
-    labels: ['A Month Ago', 'Today']
-  }
+export const getOneMonthAgoUnformatted = () => {
+  const date = moment();
+  return date.subtract(1, 'month')
+}
+
+export const getOneMonthAgoFormatted = () => {
+  let oneMonthAgo = getOneMonthAgoUnformatted()
+  let formattedDate = oneMonthAgo.format('ll')
+
+  return formattedDate
 }
 
 export const getOneMonthAgoWithoutYear = () => {
-  let d = moment()
-  let oneMonthAgo = d.subtract(1, 'month')
-  const formattedDate = oneMonthAgo.format('ll').replace(/,\s*\d{4}/, '')
+  let d = getOneMonthAgoFormatted()
+  const formattedDate = d.replace(/,\s*\d{4}/, '')
 
   return formattedDate
 }
@@ -26,4 +31,25 @@ export const getStackedBarChartLabels = () => {
     }
   })
   return labels
+}
+
+export const getDailyUserData = (data: any) => {
+  const map: any = {}
+  const currDate = getOneMonthAgoUnformatted()
+  const today = moment()
+
+  while(currDate.isSameOrBefore(today)) {
+    map[currDate.format('M-D-YY')] = 0
+    currDate.add(1, 'day')
+  }
+
+  for(let userData of data) {
+    for(let date of userData.dates) {
+      if(date in map) {
+        map[date]++
+      }
+    }
+  }
+
+  return map
 }

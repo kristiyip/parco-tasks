@@ -10,7 +10,8 @@ import {
 } from 'chart.js'
 import { Users } from './mockData';
 import { toFont } from 'chart.js/helpers';
-import { getStackedBarChartLabels } from './helper';
+import { getOneMonthAgoUnformatted, getStackedBarChartLabels } from './helper';
+import moment from "moment"
 import CustomTooltip from './CustomTooltip';
 
 ChartJS.register(
@@ -21,7 +22,7 @@ ChartJS.register(
   Legend
 );
 
-export default function DailyUsersChart() {
+export default function DailyUsersTypesChart() {
   const labels = getStackedBarChartLabels()
   const [isTooltipOpen, setIsTooltipOpen] = useState(false)
 
@@ -71,7 +72,6 @@ export default function DailyUsersChart() {
       tooltipEl.style.pointerEvents = 'none';
       tooltipEl.style.transition = 'all 0.1s ease';
       tooltipEl.style.padding = '5px';
-      tooltipEl.style.zIndex = '100'
       chart.canvas.parentNode.appendChild(tooltipEl);
     }
 
@@ -96,21 +96,29 @@ export default function DailyUsersChart() {
 
           // Set text and styles for the custom tooltip
           if (context.tooltip.body) {
+            const dateOneMonthAgo = getOneMonthAgoUnformatted()
+            const dateOfData = dateOneMonthAgo.add(context.tooltip.dataPoints[0].dataIndex, 'days')
+
+            console.log(dateOfData)
+            
             const titleLines = context.tooltip.title || [];
             const bodyLines = context.tooltip.body.map((b: any) => b.lines);
         
-            let innerHtml = `<div style="padding: 20px; width: 200px">`;
+            let innerHtml = `<div style="padding: 24px 20px; width: 200px">`;
 
             // // Add title
-            // titleLines.forEach((title: any) => {
-            //   innerHtml += `<div style="font-weight: bold; margin-bottom: 5px;">${title}</div>`;
-            // });
+            innerHtml += `
+              <div style="font-weight: bold; margin-bottom: 12px;">
+                ${dateOfData.format('ll').replace(/,\s*\d{4}/, '')}
+              </div>
+            `;
+            
       
             // Add body
             bodyLines.forEach((body: any, i: any) => {
               const parsedStackData = context.tooltip.dataPoints[i].parsed._stacks.y
               innerHtml += `
-                <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 5px;">
+                <div style="display: flex; flex-direction: column; gap: 12px; align-items: center; margin-bottom: 5px;">
                   <div style="display: flex; width: 100%; justify-content: space-between;">
                     <div style="display: flex;">
                       <div style="width: 12px; height: 12px; background-color: #60BE64; margin-right: 5px; margin-top: 4px"<div></div>

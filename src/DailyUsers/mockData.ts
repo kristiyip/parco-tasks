@@ -4,123 +4,80 @@ export const Users = [
     first_name: "Bastian",
     last_name: "Gillimgham",
     dates: [
-      ''
+      '12-1-24',
+      '12-10-24'
     ]
   }, {
     id: 2,
     first_name: "Iona",
-    last_name: "Duffield"
+    last_name: "Duffield",
+    dates: [
+      '12-1-24',
+      '12-10-24'
+    ]
   }, {
     id: 3,
     first_name: "Daren",
-    last_name: "Spratling"
+    last_name: "Spratling",
+    dates: [
+      '12-1-24',
+      '12-10-24'
+    ]
   }, {
     id: 4,
     first_name: "Becca",
-    last_name: "Coxen"
+    last_name: "Coxen",
+    dates: [
+      '12-1-24',
+      '12-10-24'
+    ]
   }, {
     id: 5,
     first_name: "Rafaello",
-    last_name: "Klimke"
+    last_name: "Klimke",
+    dates: [
+      '12-1-24',
+      '12-10-24'
+    ]
   }, {
     id: 6,
     first_name: "Stearne",
-    last_name: "Duffer"
+    last_name: "Duffer",
+    dates: [
+      '12-1-24',
+      '12-10-24'
+    ]
   }, {
     id: 7,
     first_name: "Tommi",
-    last_name: "Barradell"
+    last_name: "Barradell",
+    dates: [
+      '12-1-24',
+      '12-10-24'
+    ]
   }, {
     id: 8,
     first_name: "Sella",
-    last_name: "Locks"
+    last_name: "Locks",
+    dates: [
+      '12-1-24',
+      '12-10-24'
+    ]
   }, {
     id: 9,
     first_name: "Sidnee",
-    last_name: "Fellnee"
+    last_name: "Fellnee",
+    dates: [
+      '12-1-24',
+      '12-10-24'
+    ]
   }, {
     id: 10,
     first_name: "Cosette",
-    last_name: "Newitt"
-  }, {
-    id: 11,
-    first_name: "Oralee",
-    last_name: "Lermouth"
-  }, {
-    id: 12,
-    first_name: "Gracia",
-    last_name: "Clara"
-  }, {
-    id: 13,
-    first_name: "Modesty",
-    last_name: "Springle"
-  }, {
-    id: 14,
-    first_name: "Ivett",
-    last_name: "Marquot"
-  }, {
-    id: 15,
-    first_name: "Fiorenze",
-    last_name: "Syer"
-  }, {
-    id: 16,
-    first_name: "Lorianna",
-    last_name: "Sketcher"
-  }, {
-    id: 17,
-    first_name: "Tye",
-    last_name: "Trenouth"
-  }, {
-    id: 18,
-    first_name: "Kakalina",
-    last_name: "Hollow"
-  }, {
-    id: 19,
-    first_name: "Stuart",
-    last_name: "Saintsbury"
-  }, {
-    id: 20,
-    first_name: "Puff",
-    last_name: "Venning"
-  }, {
-    id: 21,
-    first_name: "Yoshi",
-    last_name: "Andreix"
-  }, {
-    id: 22,
-    first_name: "Masha",
-    last_name: "Hissie"
-  }, {
-    id: 23,
-    first_name: "Cinda",
-    last_name: "Stiven"
-  }, {
-    id: 24,
-    first_name: "Durward",
-    last_name: "Renyard"
-  }, {
-    id: 25,
-    first_name: "Solomon",
-    last_name: "Webborn"
-  }, {
-    id: 26,
-    first_name: "Millisent",
-    last_name: "Hembrow"
-  }, {
-    id: 27,
-    first_name: "Deerdre",
-    last_name: "Juanes"
-  }, {
-    id: 28,
-    first_name: "Alika",
-    last_name: "Ateridge"
-  }, {
-    id: 29,
-    first_name: "Willy",
-    last_name: "Gascard"
-  }, {
-    id: 30,
-    first_name: "Bertha",
-    last_name: "Bexley"
+    last_name: "Newitt",
+    dates: [
+      '12-1-24',
+      '11-30-24'
+    ]
   }
 ]

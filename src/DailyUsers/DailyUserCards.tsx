@@ -1,9 +1,12 @@
 import { Card } from "@mui/material";
 import { Switch } from "@mui/joy";
 import './DailyUsers.css'
-import DailyUsersChart from "./DailyUsersChart";
+import DailyUsersTypesChart from "./DailyUsersTypesChart";
+import { useState } from "react";
+import DailyUsersTotalChart from "./DailyUsersTotalChart";
 
 export default function DailyUserCard() {
+  const [isTypesChecked, setIsTypedChecked] = useState(false)
   return (
     <Card
       sx={{
@@ -19,6 +22,8 @@ export default function DailyUserCard() {
         <div>Daily PARCO Users</div>
         <div>
           <Switch
+            checked={isTypesChecked}
+            onChange={() => isTypesChecked ? setIsTypedChecked(false) : setIsTypedChecked(true)}
             slotProps={{
               thumb: {
                 children: (
@@ -46,7 +51,7 @@ export default function DailyUserCard() {
           />
         </div>
       </div>
-      <DailyUsersChart />
+      {isTypesChecked ? <DailyUsersTypesChart /> : <DailyUsersTotalChart />}
     </Card>
   )
 }

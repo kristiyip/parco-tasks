@@ -80,6 +80,9 @@ export default function DailyUsersTypesChart() {
 
   const options = {
     plugins: {
+      legend: {
+        display: false
+      },
       tooltip: {
         enabled: false,
         external: (context: any) => {
@@ -91,8 +94,6 @@ export default function DailyUsersTypesChart() {
             tooltipEl.style.opacity = '0';
             return;
           }
-
-          console.log(context)
 
           // Set text and styles for the custom tooltip
           if (context.tooltip.body) {
@@ -171,20 +172,20 @@ export default function DailyUsersTypesChart() {
     scales: {
       x: {
         stacked: true,
-        ticks: {
-          callback: function(val: any, index: any) {
-            if(index === 0) {
-              return labels[0]
-            } else if(index === (labels.length - 1)) {
-              return 'Today'
-            } else {
-              return ''
-            }
-          }
-        },
+        grid: {
+          display: false
+        }
       },
       y: {
-        stacked: true
+        stacked: true,
+        border: {
+          dash: [5, 5],
+          display: true
+        },
+        grid: {
+           drawTicks: false,
+           display: true
+        }
       }
     }
   }

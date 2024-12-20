@@ -21,21 +21,50 @@ ChartJS.register(
 
 export default function DailyUsersTotalChart() {
   const labels = getStackedBarChartLabels()
-  const d = getDailyUserData(Users)
   const [chartData, setChartData] = useState({
     labels: labels,
     datasets: [
       {
-        data: [],
+        data: getDailyUserData(Users),
+        backgroundColor: '#60BE6499',
         barThickness: 6,
         minBarLength: 2,
       }
     ]
   })
+
+  const options = {
+    plugins: {
+      tooltip: {
+        enabled: false,
+      },
+      legend: {
+        display: false
+      },
+    },
+    scales: {
+      x: {
+        grid: {
+          display: false
+        }
+      },
+      y: {
+        border: {
+          dash: [5, 5],
+          display: true
+        },
+        grid: {
+           drawTicks: false,
+           display: true
+        }
+      }
+    }
+  }
   return (
     <div style={{ position: 'relative' }}>
       <Bar
         data={chartData}
+        options={options}
       />
     </div>
   )

@@ -20,7 +20,7 @@ export const getOneMonthAgoWithoutYear = () => {
 }
 
 export const getStackedBarChartLabels = () => {
-  const daysInAMonth = 8
+  const daysInAMonth = 31
   let labels = Array(daysInAMonth).fill('').map((day, i) => {
     if(i == 0) {
       return getOneMonthAgoWithoutYear()
@@ -51,5 +51,7 @@ export const getDailyUserData = (data: any) => {
     }
   }
 
-  return map
+  console.log(Object.values(map))
+
+  return Object.values(map)
 }
